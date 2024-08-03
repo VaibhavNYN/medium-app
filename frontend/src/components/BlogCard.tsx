@@ -16,7 +16,7 @@ export const BlogCard = ({
     id
 }: BlogCardProps) =>{
 
-    return <Link to={`blog/${id}`}><div className="p-4 border-b border-slate-200 pb-4 w-screen max-w-4xl cursor-pointer">
+    return <Link to={`../blog/${id}`}><div className="p-4 border-b border-slate-200 pb-4 w-screen max-w-4xl cursor-pointer">
         <div className="flex">
             <Avatar name={authorName} size="small" />
             <div className="flex justify-center flex-col pl-2 font-light text-sm">
@@ -44,7 +44,7 @@ export const BlogCard = ({
     </Link>
 }
 
-export function Avatar ({name, size="small"}: {name: string, size: "small" | "big"}){
+export function Avatar ({name, size="small"}: {name: string, size?: "small" | "big"}){
     return <div className={`relative inline-flex items-center justify-center ${size === "small" ? "w-6 h-6" : "w-10 h-10"} overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600`}>
         <span className={` ${size === "small" ? "text-xs" : "text-md"} text-gray-600 dark:text-gray-300 font-extralight`}>
             {name[0]}
